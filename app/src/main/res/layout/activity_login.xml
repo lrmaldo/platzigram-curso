@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="lrmaldo.platzigram.LoginActivity"
+    android:background="@color/colorPrimary">
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical"
+                      android:weightSum="1">
+
+                      <RelativeLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:layout_weight="0.6">
+                          <ImageView
+                              android:id="@+id/logo"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_centerInParent="true"
+                              android:background="@mipmap/ic_launcher"/>
+
+                      </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.4"
+        android:fillViewport="true"
+        android:padding="@dimen/padding_horizontal_login"
+        >
+
+
+
+                      <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="match_parent"
+
+                              android:orientation="vertical"
+                                >
+                          <android.support.design.widget.TextInputLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:theme="@style/EditTextWhite">
+
+                              <android.support.design.widget.TextInputEditText
+                                  android:id="@+id/username"
+                                  android:hint="@string/username"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content" />
+                          </android.support.design.widget.TextInputLayout>
+
+                          <android.support.design.widget.TextInputLayout
+                              android:theme="@style/EditTextWhite"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content">
+
+                              <android.support.design.widget.TextInputEditText
+                                  android:id="@+id/pass"
+                                  android:hint="@string/hint_pass"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:inputType="textPassword"/>
+                          </android.support.design.widget.TextInputLayout>
+
+                          <Button
+                              android:id="@+id/btn_login"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:text="@string/text_btn_login"
+                           android:theme="@style/RairsedButtonDark"/>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                >
+                                <TextView
+                                    android:id="@+id/txt_crear_usuario"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_dont_Have_acount"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/txt_dont_have_account"/>
+                                <TextView
+                                    android:id="@+id/txt_crearAqui"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/txt_crea_uno_aqui"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/txt_dont_have_account"
+                                    android:layout_toRightOf="@id/txt_crear_usuario"
+                                    android:onClick="createAccount"/>
+
+
+                            </RelativeLayout>
+
+
+                      </LinearLayout>
+    </ScrollView>
+
+
+                  </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
