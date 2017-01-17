@@ -12,4 +12,5 @@
     <string name="hint_pass2">Confirmar contraseña</string>
     <string name="text_btn_unete">Unete!</string>
     <string name="title_toobar">Crear usuario</string>
+    <string name="timecard_txt">4 días</string>
 </resources>

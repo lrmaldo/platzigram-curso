@@ -7,4 +7,10 @@
     <dimen name="padding_horizontal_login">32dp</dimen>
     <dimen name="txt_dont_have_account">16sp</dimen>
     <dimen name="editText_margin_create">10dp</dimen>
+    <dimen name="heigthCard">200dp</dimen>
+    <dimen name="cornerRadius">4dp</dimen>
+    <dimen name="textsize_username_card">25sp</dimen>
+    <dimen name="firstwordSize">15sp</dimen>
+    <dimen name="timecard_margin_timecard">5dp</dimen>
+    <dimen name="like_margintop_card">10dp</dimen>
 </resources>
