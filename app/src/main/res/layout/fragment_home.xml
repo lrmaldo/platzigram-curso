@@ -5,8 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+
     tools:context="lrmaldo.platzigram.view.Fragment.HomeFragment">
-    <include layout="@layout/actionbar_toolbar"></include>
+
+    <include layout="@layout/actionbar_toolbar"/>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,11 +20,19 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+
         >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/pictureRecycler"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            tools:listitem="@layout/cardview_pinture"
+            >
 
 
-        <include layout="@layout/cardview_pinture"></include>
-        <include layout="@layout/cardview_pinture"></include>
+        </android.support.v7.widget.RecyclerView>
+
+
 
     </LinearLayout>
 
