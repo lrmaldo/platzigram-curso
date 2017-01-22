@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="lrmaldo.platzigram">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,13 +22,21 @@
             android:parentActivityName=".LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LoginActivity"></meta-data>
+                android:value=".LoginActivity" />
         </activity>
         <activity
             android:name=".ReferenciaActivity"
             android:label="@string/title_activity_referencia"
             android:theme="@style/AppTheme" />
-        <activity android:name=".view.ContainerActivity"></activity>
+        <activity android:name=".view.ContainerActivity" />
+
+        <activity android:name=".view.PictureDetailActivity"
+            android:parentActivityName=".view.ContainerActivity">
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.ContainerActivity" />
+        </activity>
     </application>
 
 </manifest>

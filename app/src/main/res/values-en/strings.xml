@@ -13,4 +13,6 @@
     <string name="text_btn_unete">Unete!</string>
     <string name="title_toobar">Crear usuario</string>
     <string name="timecard_txt">4 días</string>
+    <string name="titleimagedetail">\"Una imagen\"</string>
+    <string name="secondword_detail">Me gusta</string>
 </resources>

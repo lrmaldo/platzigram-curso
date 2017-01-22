@@ -1,6 +1,7 @@
 package lrmaldo.platzigram.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,10 +9,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import lrmaldo.platzigram.R;
 import lrmaldo.platzigram.model.Picture;
+import lrmaldo.platzigram.view.PictureDetailActivity;
 
 /**
  * Created by Leo on 18/01/2017.
@@ -44,7 +48,15 @@ public class PictureAdapterRecyclerview extends RecyclerView.Adapter<PictureAdap
         holder.usernameCard.setText(picture.getUsername());
         holder.timeCard.setText(picture.getTime());
         holder.likenumberCard.setText(picture.getLikeNumber());
+        Picasso.with(activity).load(picture.getPicture()).into(holder.pictureCard);
 
+        holder.pictureCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, PictureDetailActivity.class);
+                activity.startActivity(intent);
+            }
+        });
 
     }
 
