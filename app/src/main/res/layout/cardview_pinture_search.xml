@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:Cardview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/Cardview"
+    Cardview:cardCornerRadius="@dimen/cornerRadius"
+
+
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/pictureCardSearch"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/image"
+            android:scaleType="centerCrop"
+            android:transitionName="@string/transitionName_picture"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:background="@color/background_card_texts">
+
+            <TextView
+                android:id="@+id/usernameCardviewSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/usernameCardview"
+                android:textSize="@dimen/textsize_username_card"
+                android:textColor="@android:color/white"
+                />
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+    </FrameLayout>
+
+
+</android.support.v7.widget.CardView>

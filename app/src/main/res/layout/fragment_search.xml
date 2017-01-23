@@ -7,15 +7,30 @@
     android:fitsSystemWindows="true"
     tools:context="lrmaldo.platzigram.view.Fragment.SearchFragment">
 
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical">
+     <android.support.v7.widget.SearchView
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/search"
-        />
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:id="@+id/search"
+         android:queryHint="@string/searchtext"
+
+         android:background="@color/colorPrimary"
+         android:theme="@style/SearchView"
+
+         />
+
+
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclersearch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="top|bottom" />
+        android:layout_gravity="top|bottom"
+        android:paddingLeft="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"/>
+ </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
