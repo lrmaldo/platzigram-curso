@@ -33,14 +33,15 @@ public class ContainerActivity extends AppCompatActivity {
                                 .addToBackStack(null).commit();
                         break;
                     case R.id.profile:
-                        SearchFragment searchFragment = new SearchFragment();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,searchFragment)
-                                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                                .addToBackStack(null).commit();
-                        break;
-                    case R.id.search:
                         ProfileFragment profileFragment = new ProfileFragment();
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,profileFragment)
+                                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                                .addToBackStack(null).commit();
+
+                        break;
+                    case R.id.search:
+                        SearchFragment searchFragment = new SearchFragment();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container,searchFragment)
                                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                                 .addToBackStack(null).commit();
                         break;

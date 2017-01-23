@@ -18,6 +18,7 @@ public class PictureDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture_detail);
         ShowToolbar("",true);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             getWindow().setStatusBarColor(Color.TRANSPARENT);
             getWindow().setEnterTransition(new Fade());

@@ -33,7 +33,7 @@
                 android:background="@drawable/image"
                 app:layout_collapseMode="parallax"
                 android:fitsSystemWindows="true"
-                android:transitionName="@string/profile"
+                android:transitionName="@string/transitionName_picture"
                 />
 
 
