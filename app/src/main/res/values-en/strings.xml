@@ -16,4 +16,5 @@
     <string name="titleimagedetail">\"Una imagen\"</string>
     <string name="secondword_detail">Me gusta</string>
     <string name="searchtext">Buscar...</string>
+    <string name="tomar_foto">Tomar foto</string>
 </resources>

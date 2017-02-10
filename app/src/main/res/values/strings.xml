@@ -27,4 +27,5 @@
     <string name="secondword_detail">Me gusta</string>
     <string name="transitionName_picture">transitionPicture</string>
     <string name="searchtext">Buscar...</string>
+    <string name="tomar_foto">Tomar foto</string>
 </resources>
