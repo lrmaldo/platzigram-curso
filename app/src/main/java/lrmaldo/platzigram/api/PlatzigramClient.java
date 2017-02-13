@@ -13,21 +13,23 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class PlatzigramClient {
 
     private Retrofit retrofit;
-    private final static  String FIREBASE_BASE_URL ="https://hackaton-d0700.firebaseio.com/";
+    private final static  String FIREBASE_BASE_URL ="https://platzigramproyect.firebaseio.com/";
 
 
-    public PlatzigramClient (Retrofit retrofit) {
+    public PlatzigramClient() {
+
         Gson gson = new GsonBuilder()
-                .registerTypeAdapter(PostResponse.class, new PostResponse())
+                .registerTypeAdapter(PostResponse.class, new PostResponseTypeAdapter())
                 .create();
-        this.retrofit = new Retrofit.Builder()
+
+        retrofit = new  Retrofit.Builder()
                 .baseUrl(FIREBASE_BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
     }
-        public PlatzigramFirebaseService getServices()
-    {
-    return  retrofit.create(PlatzigramFirebaseService.class);
 
+
+    public PlatzigramFirebaseService getService(){
+        return  retrofit.create(PlatzigramFirebaseService.class);
     }
 }

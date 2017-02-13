@@ -5,6 +5,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import lrmaldo.platzigram.model.Post;
 
@@ -18,8 +19,32 @@ public class PostResponseTypeAdapter extends TypeAdapter {
 
     }
 
+
     @Override
-    public Object read(JsonReader reader) throws IOException {
+    public PostResponse read(JsonReader in) throws IOException {
+
+        final PostResponse response = new PostResponse();
+        ArrayList<Post> postList = new ArrayList<Post>();
+        in.beginObject();
+
+        while (in.hasNext()){
+            Post post = null;
+            try {
+                post = readPost(in);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            postList.add(post);
+        }
+
+        in.endObject();
+        response.setPostArrayList(postList);
+
+        return response;
+
+    }
+
+    public Post readPost(JsonReader reader)throws Exception{
         Post post = new Post();
         reader.nextName();
         reader.beginObject();
@@ -38,7 +63,7 @@ public class PostResponseTypeAdapter extends TypeAdapter {
 
             }
         }
-reader.endObject();
-        return post;
+        reader.endObject();
+        return  post;
     }
 }

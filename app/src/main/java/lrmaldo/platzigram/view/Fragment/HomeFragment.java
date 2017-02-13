@@ -16,14 +16,25 @@ import java.util.ArrayList;
 
 import lrmaldo.platzigram.R;
 import lrmaldo.platzigram.adapter.PictureAdapterRecyclerview;
+import lrmaldo.platzigram.adapter.PostAdapterRecyclerview;
+import lrmaldo.platzigram.api.PlatzigramClient;
+import lrmaldo.platzigram.api.PlatzigramFirebaseService;
+import lrmaldo.platzigram.api.PostResponse;
 import lrmaldo.platzigram.model.Picture;
+import lrmaldo.platzigram.model.Post;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
 
+    RecyclerView pictureRecycler;
+   ArrayList<Post> posts;
 
+    PostAdapterRecyclerview postAdapterRecyclerView;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -35,16 +46,18 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ShowToolbar(getResources().getString(R.string.home),false,view);
-        RecyclerView pictureRecycler = (RecyclerView) view.findViewById(R.id.pictureRecycler);
+        posts = new ArrayList<>();
+
+       populateDate();
+
+        pictureRecycler = (RecyclerView) view.findViewById(R.id.pictureRecycler);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         pictureRecycler.setLayoutManager(linearLayoutManager);
-        PictureAdapterRecyclerview  pictureAdapterRecyclerview = new PictureAdapterRecyclerview(buildPictures(),R.layout.cardview_pinture,getActivity());
+        postAdapterRecyclerView = new PostAdapterRecyclerview(posts,R.layout.cardview_pinture,getActivity());
 
-
-
-        pictureRecycler.setAdapter(pictureAdapterRecyclerview);
+        pictureRecycler.setAdapter(postAdapterRecyclerView);
 
 
         FloatingActionButton fab = (FloatingActionButton)view.findViewById(R.id.fab);
@@ -59,6 +72,32 @@ public class HomeFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    private void populateDate() {
+        PlatzigramFirebaseService service = (new PlatzigramClient().getService());
+        Call<PostResponse> postListCall = service.getPostList();
+        postListCall.enqueue(new Callback<PostResponse>() {
+            @Override
+            public void onResponse(Call<PostResponse> call, Response<PostResponse> response) {
+                PostResponse result = response.body();
+
+               posts = result.getPostList();
+                posts.clear();
+
+                posts.addAll(result.getPostList());
+               postAdapterRecyclerView.notifyDataSetChanged();
+
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<PostResponse> call, Throwable t) {
+
+            }
+        });
     }
 
     public ArrayList<Picture> buildPictures(){
